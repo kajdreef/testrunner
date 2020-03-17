@@ -13,6 +13,10 @@
   <url>http://www.example.com</url>
 
   <properties>
+    <junit.jupiter.version>5.6.0</junit.jupiter.version>
+    <junit.platform.version>1.6.0</junit.platform.version>
+    <junit4.version>4.13</junit4.version>
+    <testng.version>7.1.0</testng.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
@@ -24,12 +28,12 @@
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-launcher</artifactId>
-      <version>1.6.0</version>
+      <version>${junit.platform.version}</version>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-engine</artifactId>
-      <version>1.6.0</version>
+      <version>${junit.platform.version}</version>
     </dependency>
     <dependency>
       <groupId>org.junit.platform</groupId>
@@ -41,17 +45,17 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
-      <version>5.5.2</version>
+      <version>${junit.jupiter.version}</version>
 	  </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>${junit4.version}</version>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>7.1.0</version>
+      <version>${testng.version}</version>
     </dependency>
 
 
@@ -59,13 +63,13 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.5.2</version>
+      <version>${junit.jupiter.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>org.junit.vintage</groupId>
       <artifactId>junit-vintage-engine</artifactId>
-      <version>5.5.2</version>
+      <version>${junit.jupiter.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
