@@ -26,13 +26,16 @@ public class TestRunner {
         return this;
     }
 
-    public void runTests(TestExecutionListener listener) {
+    public TestRunner registerListener(TestExecutionListener listener) {
+        launcher.registerTestExecutionListeners(listener);
+        return this;
+    }
+
+    public void runTests() {
         if (this.req == null) {
             System.out.println("configure request first");
         }
         else {
-            launcher.registerTestExecutionListeners(listener);
-
             launcher.execute(this.req);
         }
     }

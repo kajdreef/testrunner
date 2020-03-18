@@ -6,22 +6,25 @@ import org.junit.platform.launcher.listeners.SummaryGeneratingListener;
 import org.junit.platform.launcher.listeners.TestExecutionSummary;
 
 public class Launcher {
-    private TestExecutionListener listener;
+    private TestExecutionListener summaryListener;
     private TestRunner runner;
 
     public Launcher() {
-        this.listener = new SummaryGeneratingListener();
+        this.summaryListener = new SummaryGeneratingListener();
+
         this.runner = new TestRunner()
-            .select("org.spideruci.testrunner.tests");
+            .select("org.spideruci.testrunner.tests")
+            .registerListener(this.summaryListener)
+            .registerListener(new ExampleTestListener());
     }
 
     public Launcher run() {
-        runner.runTests(listener);
+        runner.runTests();
         return this;
     }
 
     public void report(){
-        TestExecutionSummary summary = ((SummaryGeneratingListener) listener).getSummary();
+        TestExecutionSummary summary = ((SummaryGeneratingListener) summaryListener).getSummary();
         System.out.println("Total of tests started: " + summary.getTestsStartedCount());
         System.out.println("Total of tests succeeded: " + summary.getTestsSucceededCount());
         System.out.println("Total of tests failed: " + summary.getTestsFailedCount());
