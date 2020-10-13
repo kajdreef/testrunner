@@ -15,7 +15,7 @@
   <properties>
     <junit.jupiter.version>5.6.0</junit.jupiter.version>
     <junit.platform.version>1.6.0</junit.platform.version>
-    <junit4.version>4.13</junit4.version>
+    <junit4.version>4.13.1</junit4.version>
     <testng.version>7.1.0</testng.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
